@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="duke" class="com.example.demo.Juggler">
+        <constructor-arg value="15"/>
+    </bean>
+
+    <bean id="basho" class="com.example.demo.Basho"/>
+
+    <bean id="poeticDuke" class="com.example.demo.PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="basho"/>
+    </bean>
+
+    <bean id="theStage"
+          class="com.example.demo.Stage"
+          factory-method="getInstance"
+          init-method="turnOnLights"
+          destroy-method="turnOffLights"
+    />
+
+    <bean id="electricGuitar" class="com.example.demo.ElectricGuitar"/>
+
+    <bean id="mike" class="com.example.demo.Instrumentalist">
+        <property name="song" value="Clever Girl - Elm"/>
+        <property name="instrument" ref="electricGuitar"/>
+    </bean>
+
+    <bean id="ryo" class="com.example.demo.Instrumentalist">
+        <property name="song" value="Mellow Dream"/>
+        <property name="instrument">
+            <bean class="com.example.demo.Piano"/>
+        </property>
+    </bean>
+
+    <bean id="hank" class="com.example.demo.OneManBand">
+        <property name="instruments">
+            <list>
+                <ref bean="electricGuitar"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
