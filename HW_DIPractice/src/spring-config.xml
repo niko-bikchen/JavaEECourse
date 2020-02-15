@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="aw-123" class="com.mecha.niko.CamouflagingDevice"/>
+
+    <bean id="ew-321" class="com.mecha.niko.EnergyShieldGenerator"/>
+
+    <bean id="lp-223" class="com.mecha.niko.Gun">
+        <constructor-arg value="LP-223"/>
+    </bean>
+
+    <bean id="xz-566" class="com.mecha.niko.Gun">
+        <constructor-arg value="XZ-556"/>
+    </bean>
+
+    <bean id="kx-878" class="com.mecha.niko.Gun">
+        <constructor-arg value="KX-878"/>
+    </bean>
+
+    <bean id="mike" class="com.mecha.niko.MechaPilot">
+        <constructor-arg value="Mike"/>
+        <constructor-arg value="25"/>
+        <property name="rank" value="Major"/>
+    </bean>
+
+    <bean id="john" class="com.mecha.niko.MechaPilot">
+        <constructor-arg value="John"/>
+        <constructor-arg value="35"/>
+        <property name="rank" value="Major"/>
+    </bean>
+
+    <bean id="karl" class="com.mecha.niko.MechaPilot">
+        <constructor-arg value="Karl"/>
+        <constructor-arg value="45"/>
+        <property name="rank" value="General"/>
+    </bean>
+
+    <bean id="xz-alpha" class="com.mecha.niko.XZAlpha">
+        <constructor-arg ref="mike"/>
+        <property name="camouflage" ref="aw-123"/>
+    </bean>
+
+    <bean id="ki-destroyer" class="com.mecha.niko.KIDestroyer">
+        <constructor-arg ref="john"/>
+        <property name="generator" ref="ew-321"/>
+        <property name="bigGun" ref="lp-223"/>
+    </bean>
+
+    <bean id="omega-battle-platform" class="com.mecha.niko.BattlePlatformOmega">
+        <constructor-arg ref="karl"/>
+        <constructor-arg ref="ew-321"/>
+        <property name="manyGunz">
+            <list>
+                <ref bean="lp-223"/>
+                <ref bean="kx-878"/>
+                <ref bean="xz-566"/>
+            </list>
+        </property>
+    </bean>
+</beans>
