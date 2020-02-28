@@ -1,0 +1,8 @@
+.welcome-title,
+.welcome-subtitle {
+    text-align: center;
+}
+
+.welcome-title {
+    text-transform: uppercase;
+}
