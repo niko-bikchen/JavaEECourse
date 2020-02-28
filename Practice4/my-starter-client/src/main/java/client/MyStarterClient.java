@@ -17,6 +17,9 @@ public class MyStarterClient {
         MyLibraryClass myLibraryClass1 = (MyLibraryClass) applicationContext.getBean("myLibraryClass");
         myLibraryClass1.printInfo();
 
+        // This will work only if property "my.property" exists in the application.properties
+        // and has value other than false, as this bean is annotated with @ConditionalOnProperty.
+        // Otherwise, this bean will not be created and the lines below will cause an error.
         MyOtherLibraryClass myOtherLibraryClass = applicationContext.getBean(MyOtherLibraryClass.class);
         myOtherLibraryClass.printInfo();
     }
