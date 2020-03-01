@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📝 Add new book 📝</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h2 class="add-book-title">Add Book</h2>
+<div class="add-form">
+    <form method="post" action="/add-book">
+        <table>
+            <tr>
+                <td>
+                    <label for="title">Title:</label>
+                </td>
+                <td>
+                    <input type="text" name="title" id="title"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="author">Author:</label>
+                </td>
+                <td>
+                    <input type="text" name="author" id="author"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="isbn">ISBN:</label>
+                </td>
+                <td>
+                    <input type="text" name="isbn" id="isbn"/>
+                </td>
+            </tr>
+        </table>
+        <div class="submit-btn">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
