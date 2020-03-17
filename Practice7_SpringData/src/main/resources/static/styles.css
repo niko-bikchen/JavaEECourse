@@ -1,0 +1,152 @@
+* {
+    background-color: black;
+    font-family: "Roboto Mono", monospace;
+    color: white;
+}
+
+a {
+    color: lightgreen;
+}
+
+a:visited {
+    color: lightsalmon;
+}
+
+.filter {
+    text-align: right;
+}
+
+.filter button {
+    padding: 5px 10px;
+
+    color: white;
+    font-weight: bolder;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.filter input {
+    padding: 4px;
+    font-family: "Roboto Mono", monospace;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.no-books-title, .add-book-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.add-book-title {
+    margin-top: 10%;
+}
+
+.add-book-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.add-book-container .add-book-btn {
+    padding: 5px 10px;
+
+    color: white;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border: 2px solid white;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.add-book-container a,
+.add-book-container a:hover,
+.add-book-container a:visited {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.books-table caption {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: yellow;
+}
+
+.books-table, .books-table th, .books-table td {
+    border: 2px solid white;
+}
+
+.books-table .titles {
+    text-align: center;
+}
+
+.books-table .titles td {
+    color: hotpink;
+}
+
+.books-table .book-id {
+    text-align: center;
+}
+
+.books-table .book-title {
+    text-align: center;
+}
+
+.books-table .book-author {
+    text-align: center;
+}
+
+.books-table .book-isbn {
+    text-align: center;
+}
+
+.add-form {
+    display: flex;
+    justify-content: center;
+}
+
+.add-form input {
+    padding: 4px;
+
+    color: white;
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+.add-form button[type="submit"] {
+    width: 40%;
+
+    margin-top: 20px;
+    padding: 5px 10px;
+
+    color: white;
+    font-weight: bolder;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border: 2px solid white;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.add-form .submit-btn {
+    text-align: center;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>📚 Books list 📚</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form action="/filter-books" method="post" class="filter">
+    <label for="filter-input">Filter</label>
+    <select name="filter-criteria">
+        <option value="title">by title</option>
+        <option value="isbn">by ISBN</option>
+    </select>
+    <input id="filter-input" name="filter-input" type="text">
+    <button type="submit">Apply</button>
+</form>
+<h2 th:unless="${!books.isEmpty()}" class="no-books-title">
+    No books present
+    <br/>
+    🤷‍♂️
+</h2>
+<div class="add-book-container">
+    <a href="/add-book-form">
+        <button class="add-book-btn">
+            Add a New Book
+        </button>
+    </a>
+</div>
+<table th:if="${!books.isEmpty()}" class="books-table">
+    <caption>Books list</caption>
+    <tr class="titles">
+        <td>ID</td>
+        <td>Title</td>
+        <td>Author</td>
+        <td>ISBN</td>
+    </tr>
+    <tr th:each="book: ${books}">
+        <td class="book-id">
+            <a th:href="@{'/book/' + ${book.getBookNumber()}}" th:text="${book.getBookNumber()}"></a>
+        </td>
+        <td class="book-title" th:text="${book.getTitle()}"></td>
+        <td class="book-author" th:text="${book.getAuthor()}"></td>
+        <td class="book-isbn" th:text="${book.getIsbn()}"></td>
+    </tr>
+</table>
+</body>
+</html>
