@@ -31,6 +31,7 @@ public class UserEntity {
 
     @Column(name = "password")
     @NotNull(message = "Password cannot be empty")
+    // Max size is 100, because when it was 20 I always got validation errors no metter what the password was
     @Size(min = 8, max = 100)
     private String password;
 
